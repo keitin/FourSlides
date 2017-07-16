@@ -7,12 +7,17 @@ class SlidesController < ApplicationController
   end
 
   def create
-    Slide.create(slide_params)
+    slide = Slide.create(slide_params)
+    Image.create_with(images_params, slide)
     redirect_to :root
   end
 
   private
   def slide_params
-    params.require(:slide).permit(:title, :summary)
+    params.require(:slide).permit(:title, :summary).merge(user_id: current_user.id)
+  end
+
+  def images_params
+    params.require(:images)
   end
 end

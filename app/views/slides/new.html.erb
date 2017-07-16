@@ -11,6 +11,22 @@
     <%= f.text_field :summary, autofocus: false %>
   </div>
 
+  <div class="field">
+    <%= f.file_field :image_order1, name: "images[]" %>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :image_order2, name: "images[]" %>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :image_order3, name: "images[]" %>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :image_order4, name: "images[]" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Create" %>
   </div>

@@ -47,3 +47,5 @@ end
 
 gem 'devise'
 gem 'pry-rails'
+gem 'carrierwave', '~> 1.0'
+gem 'activerecord-import'
