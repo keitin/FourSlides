@@ -1,5 +1,10 @@
 class SlidesController < ApplicationController
   def index
+    @slides = Slide.eager_load(:images)
+  end
+
+  def show
+    @slide = Slide.find(slide_param[:id])
   end
 
   def new
@@ -13,6 +18,10 @@ class SlidesController < ApplicationController
   end
 
   private
+  def slide_param
+    params.permit(:id)
+  end
+
   def slide_params
     params.require(:slide).permit(:title, :summary).merge(user_id: current_user.id)
   end
