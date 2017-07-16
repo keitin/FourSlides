@@ -1,30 +1,35 @@
 <h2>New Slide</h2>
 
 <%= form_for(@slide) do |f| %>
-  <div class="field">
+  <div class="slide-field">
     <%= f.label :title %><br />
     <%= f.text_field :title, autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :summary %><br />
+  <div class="slide-field">
+    <%= f.label :summary%><br />
     <%= f.text_field :summary, autofocus: false %>
   </div>
 
-  <div class="field">
-    <%= f.file_field :image_order1, name: "images[]" %>
+  <div class="slide-field">
+    <%= f.label :image_order1, class: 'image-field-label', :id => "slide_image_order1_medium" %>
+    <%= f.file_field :image_order1, class: 'image-upload image-field', name: "images[]" %>
   </div>
 
-  <div class="field">
-    <%= f.file_field :image_order2, name: "images[]" %>
+
+  <div class="slide-field">
+    <%= f.label :image_order2, class: 'image-field-label', :id => "slide_image_order2_medium" %>
+    <%= f.file_field :image_order2, class: 'image-upload image-field', name: "images[]" %>
   </div>
 
-  <div class="field">
-    <%= f.file_field :image_order3, name: "images[]" %>
+  <div class="slide-field">
+    <%= f.label :image_order3, class: 'image-field-label', :id => "slide_image_order3_medium" %>
+    <%= f.file_field :image_order3, class: 'image-upload image-field', name: "images[]" %>
   </div>
 
-  <div class="field">
-    <%= f.file_field :image_order4, name: "images[]" %>
+  <div class="slide-field">
+    <%= f.label :image_order4, class: 'image-field-label', :id => "slide_image_order4_medium" %>
+    <%= f.file_field :image_order4, class: 'image-upload image-field', name: "images[]" %>
   </div>
 
   <div class="actions">

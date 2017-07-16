@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<% if user_signed_in? %>
-  <%= link_to "Home", root_path, :class => ''%> 
+<% if user_signed_in? && !controller.action_name == "show" %>
+  <%= link_to "Home", root_path, :class => 'nivigation-bar'%> 
 <% end %>
 
 <%= yield %>
