@@ -6,6 +6,11 @@ p, a, li, span, h1, h2, h3 {
   font-family: 'Helvetica'
 }
 
+input, button, select, textarea {
+  // -webkit-appearance: none;
+  background-color: white;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -223,4 +228,70 @@ a {
 
 .copylight {
   font-size: 10px;
+}
+
+// Session
+.sign-in-header {
+  background-image: url("header_image.jpg");
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+
+.sign-in-header-content {
+  padding: 20px;
+  padding-top: 10px;
+  width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  opacity: 0.8;
+  margin-top: 100px;
+}
+
+.sign-in-header-content input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.sign-in-header-content label {
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.sign-in-header-content .actions input {
+  background-color: lightblue;
+  height: 40px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  box-sizing: border-box;
+    &::-webkit-search-decoration {
+      display: none;
+    }
+    &::focus {
+      outline-offset: -2px;
+    }
+}
+
+.go-to-preview {
+  background-color: orange;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
 }

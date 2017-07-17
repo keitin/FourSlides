@@ -8,27 +8,32 @@
 </head>
 <body>
 
-  <% if user_signed_in? && controller.action_name != "preview" %>
+  <% if controller.action_name != "preview" %>
     <div class="navigation-bar">
       <div class="navigation-bar-content clearfix">
         <%= link_to "FOURSLIDES", root_path , class: "service-title" %>
         <ul class="navigation-bar-items-ul">
-          <li><%= link_to 'MY PAGE', user_path(current_user.username) %></li>
-          <li><%= link_to "+NEW SLIDE", new_slide_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'MY PAGE', user_path(current_user.username) %></li>
+            <li><%= link_to "+NEW SLIDE", new_slide_path %></li>
+          <% else %>
+            <li><%= link_to 'SIGN IN', new_user_session_path %></li>
+            <li><%= link_to "+NEW SLIDE", new_slide_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>
   <% end %>
 
-  <% if user_signed_in? && controller.action_name != "preview" %>
-  <div class="yield-content">
-    <%= yield %>
-  </div>
+  <% if controller.action_name != "preview" %>
+    <div class="yield-content">
+      <%= yield %>
+    </div>
   <% else %>
     <%= yield %>
   <% end %>
 
-  <% if user_signed_in? && controller.action_name != "preview" %>
+  <% if controller.action_name != "preview" %>
     <div class="footer-bar">
       <div class="footer-bar-content">
         <p class="copylight">(c) Keita Matsushita 2017</p>

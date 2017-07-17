@@ -1,4 +1,7 @@
 class SlidesController < ApplicationController
+
+  before_action :authenticate_user!, only: :new
+
   def index
     @slides = Slide.eager_load(:images)
   end
