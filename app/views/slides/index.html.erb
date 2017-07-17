@@ -1,9 +1,15 @@
-<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => '' %> 
-<%= link_to "New slides", new_slide_path, :class => '' %> 
+<div class="header-content">
+  <div class="header-text-content content-width">
+    <h1> FOURSLIDES </h1>
+    <p> FOURSLIDES is a web service for expressing you <br> and your products by only <span class="header-description-span">4</span> slides</p>
+  </div>
+</div>
 
-<% @slides.each do |slide| %>
-
-  <%= link_to slide_path(slide) do %>
-  <div style="background-image: url(<%= slide.images.first.image.url %>)" class="slide-top-image"></div>
+<div class="slide-index-content content-width clearfix">
+  <h1>Recent Slides</h1>
+  <% @slides.each do |slide| %>
+    <%= link_to slide_path(slide) do %>
+    <div style="background-image: url(<%= slide.images.first.image.url %>)" class="slide-top-image"></div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

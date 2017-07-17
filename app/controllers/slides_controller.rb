@@ -17,6 +17,10 @@ class SlidesController < ApplicationController
     redirect_to :root
   end
 
+  def preview
+    @slide = Slide.find(slide_param[:id])
+  end
+
   private
   def slide_param
     params.permit(:id)

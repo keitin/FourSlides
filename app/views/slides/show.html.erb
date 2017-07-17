@@ -1,3 +1,22 @@
-<% @slide.images.each do |image| %>
-  <%= image_tag "#{image.image.url}", class: "slide-images" %>
-<% end %>
+
+<div class="content-width">
+  <div class="slide-show-user-profile">
+    <p>produced by</p>
+    <div class="clearfix">
+      <div class="user-avatar" style="background-image: url(header_image.jpg)">
+      </div>
+      <p class="user-name">
+        <%= @slide.user.username %>
+      </p>
+    </div>
+  </div>
+  <div class="slide-show-details">
+    <p class="slide-title"><%= @slide.title %></p>
+    <p class="slide-summary"><%= @slide.summary %></p>
+    <%= link_to 'PREVIEW', preview_slide_path(@slide) %>
+    <p></p>
+  </div>
+  <% @slide.images.each do |image| %>
+    <%= image_tag "#{image.image.url}", class: "slide-images" %>
+  <% end %>
+</div>

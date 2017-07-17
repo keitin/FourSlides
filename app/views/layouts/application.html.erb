@@ -8,11 +8,32 @@
 </head>
 <body>
 
-<% if user_signed_in? && !controller.action_name == "show" %>
-  <%= link_to "Home", root_path, :class => 'nivigation-bar'%> 
-<% end %>
+  <% if user_signed_in? && controller.action_name != "preview" %>
+    <div class="navigation-bar">
+      <div class="navigation-bar-content clearfix">
+        <%= link_to "FOURSLIDES", root_path , class: "service-title" %>
+        <ul class="navigation-bar-items-ul">
+          <li><%= link_to 'MY PAGE', user_path(current_user) %></li>
+          <li><%= link_to "+NEW SLIDE", new_slide_path %></li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
 
-<%= yield %>
+  <% if user_signed_in? && controller.action_name != "preview" %>
+  <div class="yield-content">
+    <%= yield %>
+  </div>
+  <% else %>
+    <%= yield %>
+  <% end %>
 
+  <% if user_signed_in? && controller.action_name != "preview" %>
+    <div class="footer-bar">
+      <div class="footer-bar-content">
+        <p class="copylight">(c) Keita Matsushita 2017</p>
+      </div>
+    </div>
+  <% end %>
 </body>
 </html>

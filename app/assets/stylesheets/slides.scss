@@ -2,21 +2,128 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+p, a, li, span, h1, h2, h3 {
+  font-family: 'Helvetica'
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.content-width {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+// navigation
+.navigation-bar {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  background-color: white;
+  border-bottom: 1px lightgray solid;
+}
+
+.navigation-bar-content {
+  width: 1000px;
+  margin: 0px auto;
+}
+
+.service-title {
+  font-weight: bold;
+  float: left;
+  margin: 0px;
+  line-height: 60px;
+}
+
+.navigation-bar-items-ul {
+  margin: 0px;
+}
+
+.navigation-bar-items-ul li {
+  float: right;
+  list-style: none;
+  font-size: 13px;
+  line-height: 60px;
+  margin-left: 30px;
+}
+
+.yield-content {
+  padding-top: 60px;
+}
+
+// common
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 // index page
+.header-content {
+  background-image: url("header_image.jpg");
+  background-position: right;
+  background-size: cover;
+  height: 300px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  font-family: 'Helvetica';
+}
+
+.header-text-content {
+  
+}
+
+.header-text-content h1 {
+  text-shadow: white 1px 1px 10px;
+  margin-top: 75px;
+  font-size: 60px;
+  color: #1f3134;
+  letter-spacing: 3px;
+  border-bottom: 4px solid white;
+  display: inline-block;
+  margin-bottom: 0px;
+}
+
+.header-text-content p {
+  text-shadow: white 1px 1px 10px;
+}
+
+.slide-index-content {
+  
+}
+
 .slide-top-image {
-  width: 350px;
+  width: 32.3%;
   height: 200px;
   background-position: center;
   background-size: cover;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
+.header-description-span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
 // show page
+
 .slide-field {
-  // position: absolute;
+  margin-bottom: 20px;
 }
 
 .slide-images {
   width: 100%;
+}
+
+.slide-form-content {
+  margin-bottom: 250px;
 }
 
 .image-field {
@@ -24,14 +131,96 @@
 }
 
 .image-field-label {
+  background-position: center;
+  background-size: cover;
   display: block;
   width: 100%;
   height: 400px;
   cursor: pointer;
-  background-color: gray;
+  border: 1px solid lightblue;
+  background-color: lightblue;
+  text-align: center;
+  line-height: 400px;
+  color: white;
 }
 
 .slide-preview-image {
   width: 100%;
 }
 
+.slide-title-field input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.slide-summay-field input {
+  width: 100%; 
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.slide-submit-buttom {
+  width: 100%;
+  padding: 15px 40px;
+  font-size: 1.2em;
+  background-color: lightblue;
+  color: #fff;
+  border-style: none;
+}
+
+.slide-show-user-profile {
+  border-bottom: 1px solid lightgray;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+.slide-show-user-profile .user-avatar {
+  height: 60px;
+  width: 60px;
+  background-color: lightblue;
+  border-radius: 30px;
+  float: left;
+  margin-right: 20px;
+}
+
+.slide-show-user-profile p {
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.slide-show-user-profile .user-name {
+  float: left;
+  line-height: 60px;
+  margin: 0px;
+  letter-spacing: 2px;
+}
+
+.slide-show-details .slide-title {
+  font-size: 30px;
+  font-weight: bold;
+  border-left: 5px solid black;
+  padding-left: 10px;
+}
+
+.slide-show-details .slide-summary {
+  margin-bottom: 25px;
+}
+
+// Footer
+.footer-bar {
+  padding-top: 50px;
+  margin-top: 100px;
+  height: 200px;
+  background-color: darkgray;
+}
+
+.footer-bar-content {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.copylight {
+  font-size: 10px;
+}

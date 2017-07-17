@@ -1,0 +1,25 @@
+<div class="content-width">
+  <div class="slide-show-user-profile">
+    <p>Your profile</p>
+    <div class="clearfix">
+      <div class="user-avatar" style="background-image: url(header_image.jpg)">
+      </div>
+      <p class="user-name">
+        <%= current_user.username %>
+      </p>
+    </div>
+  </div>
+  <div class="slide-index-content clearfix">
+  <h1>Your Slides</h1>
+  <% @slides.each do |slide| %>
+    <%= link_to slide_path(slide) do %>
+    <div style="background-image: url(<%= slide.images.first.image.url %>)" class="slide-top-image"></div>
+    <% end %>
+  <% end %>
+</div>
+  <div class="slide-show-user-profile">
+    <p>Settings</p>
+    <div><%= link_to 'EDIT PROFILE', edit_user_registration_path(@current_user)  %></div>
+    <div><%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, :class => '' %></div>
+  </div>
+</div>

@@ -1,39 +1,54 @@
-<h2>New Slide</h2>
+<div class="slide-form-content content-width">
+  <h2>Create a new slide</h2>
 
-<%= form_for(@slide) do |f| %>
-  <div class="slide-field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title, autofocus: true %>
-  </div>
+  <%= form_for(@slide) do |f| %>
+    <div class="slide-field slide-title-field"> 
+      <%= f.text_field :title, placeholder: "Title", autofocus: true %>
+    </div>
 
-  <div class="slide-field">
-    <%= f.label :summary%><br />
-    <%= f.text_field :summary, autofocus: false %>
-  </div>
+    <div class="slide-field slide-summay-field">
+      <%= f.text_field :summary, placeholder: "Description" %>
+    </div>
 
-  <div class="slide-field">
-    <%= f.label :image_order1, class: 'image-field-label', :id => "slide_image_order1_medium" %>
-    <%= f.file_field :image_order1, class: 'image-upload image-field', name: "images[]" %>
-  </div>
+    <div class="slide-field">
+      <%= f.label :image_order1, class: 'image-field-label', :id => "slide_image_order1_medium" %>
+      <%= f.file_field :image_order1, class: 'image-upload image-field', name: "images[]" %>
+    </div>
 
 
-  <div class="slide-field">
-    <%= f.label :image_order2, class: 'image-field-label', :id => "slide_image_order2_medium" %>
-    <%= f.file_field :image_order2, class: 'image-upload image-field', name: "images[]" %>
-  </div>
+    <div class="slide-field">
+      <%= f.label :image_order2, class: 'image-field-label', :id => "slide_image_order2_medium" %>
+      <%= f.file_field :image_order2, class: 'image-upload image-field', name: "images[]" %>
+    </div>
 
-  <div class="slide-field">
-    <%= f.label :image_order3, class: 'image-field-label', :id => "slide_image_order3_medium" %>
-    <%= f.file_field :image_order3, class: 'image-upload image-field', name: "images[]" %>
-  </div>
+    <div class="slide-field">
+      <%= f.label :image_order3, class: 'image-field-label', :id => "slide_image_order3_medium" %>
+      <%= f.file_field :image_order3, class: 'image-upload image-field', name: "images[]" %>
+    </div>
 
-  <div class="slide-field">
-    <%= f.label :image_order4, class: 'image-field-label', :id => "slide_image_order4_medium" %>
-    <%= f.file_field :image_order4, class: 'image-upload image-field', name: "images[]" %>
-  </div>
+    <div class="slide-field">
+      <%= f.label :image_order4, class: 'image-field-label', :id => "slide_image_order4_medium" %>
+      <%= f.file_field :image_order4, class: 'image-upload image-field', name: "images[]" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Create" %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit "Create Slide", class: "slide-submit-buttom"%>
+    </div>
+  <% end %>
+</div>
 
+<script type="text/javascript">
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();            
+      reader.onload = function (e) {
+        $(document.getElementById(input.id + "_medium")).css('background-image', "url(" + e.target.result + ")");
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $(".image-upload").change(function(){
+    readURL(this);
+  });
+</script>
