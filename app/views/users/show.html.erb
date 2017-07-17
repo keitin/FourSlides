@@ -2,7 +2,7 @@
   <div class="slide-show-user-profile">
     <p>Your profile</p>
     <div class="clearfix">
-      <div class="user-avatar" style="background-image: url(header_image.jpg)">
+      <div class="user-avatar" style="background-image: url(<%= current_user.avatar.url %>)">
       </div>
       <p class="user-name">
         <%= current_user.username %>

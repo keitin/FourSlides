@@ -3,7 +3,7 @@
   <div class="slide-show-user-profile">
     <p>produced by</p>
     <div class="clearfix">
-      <div class="user-avatar" style="background-image: url(header_image.jpg)">
+      <div class="user-avatar" style="background-image: url(<%= @slide.user.avatar.url %>)">
       </div>
       <p class="user-name">
         <%= @slide.user.username %>

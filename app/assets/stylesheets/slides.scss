@@ -182,9 +182,19 @@ a {
   margin-bottom: 50px;
 }
 
+.edit-user .user-avatar {
+  height: 60px;
+  width: 60px;
+  background-color: lightblue;
+  border-radius: 30px;
+  margin-right: 20px;
+}
+
 .slide-show-user-profile .user-avatar {
   height: 60px;
   width: 60px;
+  background-size: cover;
+  background-position: center;
   background-color: lightblue;
   border-radius: 30px;
   float: left;
