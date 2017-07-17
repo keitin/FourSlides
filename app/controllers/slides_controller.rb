@@ -1,6 +1,7 @@
 class SlidesController < ApplicationController
 
   before_action :authenticate_user!, only: :new
+  before_action :are_current_user?, only: [:edit, :update]
 
   def index
     @slides = Slide.eager_load(:images)
@@ -17,6 +18,20 @@ class SlidesController < ApplicationController
   def create
     slide = Slide.create(slide_params)
     Image.create_with(images_params, slide)
+    redirect_to :root
+  end
+
+  def edit
+    @slide = Slide.find(slide_param[:id])
+  end
+
+  def update
+    slide = Slide.find(slide_param[:id])
+    slide.update(slide_params)
+    Image.find(slide.images[0].id).update(image: images_params[:order_1]) if images_params[:order_1].present?
+    Image.find(slide.images[1].id).update(image: images_params[:order_2]) if images_params[:order_2].present?
+    Image.find(slide.images[2].id).update(image: images_params[:order_3]) if images_params[:order_3].present?
+    Image.find(slide.images[3].id).update(image: images_params[:order_4]) if images_params[:order_4].present?
     redirect_to :root
   end
 
@@ -41,5 +56,12 @@ class SlidesController < ApplicationController
 
   def user_slide_params
     params.permit(:username, :title)
+  end
+
+  def are_current_user?
+    @slide = Slide.find(slide_param[:id])
+    if @slide.user != current_user
+      redirect_to :root
+    end
   end
 end

@@ -12,6 +12,9 @@
   </div>
   <div class="slide-show-details">
     <%= link_to 'GO TO WEB SITE', "/#{@slide.user.username}/#{@slide.title}", target: "_blanck", class: "go-to-preview" %>
+    <% if @slide.user == current_user %>
+      <%= link_to 'EDIT SLIDE', edit_slide_path(@slide), class: "go-to-preview" %>
+    <% end %>
     <p class="slide-title"><%= @slide.title %></p>
     <p class="slide-summary"><%= @slide.summary %></p>
     <p></p>

@@ -1,0 +1,54 @@
+<div class="content-width">
+    <h2>Edit a slide</h2>
+
+  <%= form_for(@slide, html: {method: "patch"}) do |f| %>
+    <div class="slide-field slide-title-field"> 
+      <%= f.text_field :title, placeholder: "Title", autofocus: true %>
+    </div>
+
+    <div class="slide-field slide-summay-field">
+      <%= f.text_field :summary, placeholder: "Description" %>
+    </div>
+
+    <div class="slide-field">
+      <%= f.label :image_order1, class: 'image-field-label', :id => "slide_image_order1_medium", style: "background-image: url(#{@slide.images[0].image.url})" %>
+      <%= f.file_field :image_order1, class: 'image-upload image-field', name: "images[order_1]" %>
+    </div>
+
+
+    <div class="slide-field">
+      <%= f.label :image_order2, class: 'image-field-label', :id => "slide_image_order2_medium", style: "background-image: url(#{@slide.images[1].image.url})" %>
+      <%= f.file_field :image_order2, class: 'image-upload image-field', name: "images[order_2]" %>
+    </div>
+
+    <div class="slide-field">
+      <%= f.label :image_order3, class: 'image-field-label', :id => "slide_image_order3_medium", style: "background-image: url(#{@slide.images[2].image.url})" %>
+      <%= f.file_field :image_order3, class: 'image-upload image-field', name: "images[order_3]" %>
+    </div>
+
+    <div class="slide-field" >
+      <%= f.label :image_order4, class: 'image-field-label', :id => "slide_image_order4_medium", style: "background-image: url(#{@slide.images[3].image.url})" %>
+      <%= f.file_field :image_order4, class: 'image-upload image-field', name: "images[order_4]" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Edit Slide", class: "slide-submit-buttom"%>
+    </div>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();            
+      reader.onload = function (e) {
+        $(document.getElementById(input.id + "_medium")).css('background-image', "url(" + e.target.result + ")");
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $(".image-upload").change(function(){
+    readURL(this);
+  });
+</script>
