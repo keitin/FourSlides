@@ -13,7 +13,7 @@
   <div class="slide-show-details">
     <p class="slide-title"><%= @slide.title %></p>
     <p class="slide-summary"><%= @slide.summary %></p>
-    <%= link_to 'PREVIEW', preview_slide_path(@slide) %>
+    <%= link_to 'PREVIEW', "/#{current_user.username}/#{@slide.title}" %>
     <p></p>
   </div>
   <% @slide.images.each do |image| %>

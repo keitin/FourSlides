@@ -13,7 +13,7 @@
       <div class="navigation-bar-content clearfix">
         <%= link_to "FOURSLIDES", root_path , class: "service-title" %>
         <ul class="navigation-bar-items-ul">
-          <li><%= link_to 'MY PAGE', user_path(current_user) %></li>
+          <li><%= link_to 'MY PAGE', user_path(current_user.username) %></li>
           <li><%= link_to "+NEW SLIDE", new_slide_path %></li>
         </ul>
       </div>

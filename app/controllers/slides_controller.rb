@@ -18,7 +18,9 @@ class SlidesController < ApplicationController
   end
 
   def preview
-    @slide = Slide.find(slide_param[:id])
+    username = user_slide_params[:username]
+    slide_title = user_slide_params[:title]
+    @slide = User.find_by(username: username).slides.find_by(title: slide_title)
   end
 
   private
@@ -32,5 +34,9 @@ class SlidesController < ApplicationController
 
   def images_params
     params.require(:images)
+  end
+
+  def user_slide_params
+    params.permit(:username, :title)
   end
 end
