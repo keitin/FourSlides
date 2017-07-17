@@ -16,9 +16,21 @@ class SlidesController < ApplicationController
   end
 
   def create
-    slide = Slide.create(slide_params)
-    Image.create_with(images_params, slide)
-    redirect_to :root
+    if Slide.is_images_not_enough?(params)
+      redirect_to :back, alert: '全ての画像をセットしてください'
+      return
+    end
+    slide = Slide.new(slide_params)
+    if !Slide.is_title_unique?(slide, current_user)
+      redirect_to :back, alert: 'そのタイトルはすでに存在しています'
+      return
+    end
+    if slide.save
+      Image.create_with(images_params, slide)
+      redirect_to :root
+    else
+      redirect_to :back, alert: 'タイトルをセットしてください'
+    end
   end
 
   def edit
@@ -39,6 +51,12 @@ class SlidesController < ApplicationController
     username = user_slide_params[:username]
     slide_title = user_slide_params[:title]
     @slide = User.find_by(username: username).slides.find_by(title: slide_title)
+  end
+
+  def destroy
+    slide = Slide.find(slide_param[:id])
+    slide.destroy
+    redirect_to :root
   end
 
   private

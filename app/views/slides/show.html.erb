@@ -6,7 +6,7 @@
       <div class="user-avatar" style="background-image: url(<%= @slide.user.avatar.url %>)">
       </div>
       <p class="user-name">
-        <%= @slide.user.username %>
+        <%= link_to "#{@slide.user.username}", user_path(@slide.user.username) %>
       </p>
     </div>
   </div>
@@ -21,5 +21,11 @@
   </div>
   <% @slide.images.each do |image| %>
     <%= image_tag "#{image.image.url}", class: "slide-images" %>
+  <% end %>
+
+  <% if @slide.user == current_user %>
+    <div class="delete-slide-box">
+      <%= link_to 'Delete this slide', slide_path(@slide), method: :delete %>
+    </div>
   <% end %>
 </div>

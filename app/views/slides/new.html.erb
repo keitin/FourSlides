@@ -1,5 +1,16 @@
 <div class="slide-form-content content-width">
   <h2>Create a new slide</h2>
+  <% if flash[:alert].present? %>
+    <div id="error_explanation">
+     <%= flash[:alert] %>
+      <ul>
+      <% @slide.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 
   <%= form_for(@slide) do |f| %>
     <div class="slide-field slide-title-field"> 
