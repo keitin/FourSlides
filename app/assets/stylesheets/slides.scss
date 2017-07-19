@@ -28,6 +28,7 @@ a {
   position: fixed;
   background-color: white;
   border-bottom: 1px lightgray solid;
+  z-index: 4;
 }
 
 .navigation-bar-content {
@@ -169,16 +170,50 @@ a {
   width: 100%;
   padding: 15px 40px;
   font-size: 1.2em;
-  background-color: lightblue;
+  background-color: orange;
   color: #fff;
   border-style: none;
 }
 
+.slide-show-user-profile-content {
+  padding: 30px;
+  padding-top: 0px;
+}
+
+.slide-show-user-profile .slide-description {
+  padding-bottom: 28px;
+  border-bottom: 1px solid lightgray;
+}
+
 .slide-show-user-profile {
   border-bottom: 1px solid lightgray;
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 50px;
   margin-bottom: 50px;
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  right: 0px;
+  top: 61px;
+  background-color: white;
+}
+
+.slide-show-user-profile .links {
+  font-size: 12px;
+  border: 1px solid #504946;
+  padding: 8px 10px;
+  border-radius: 5px;
+  display: inline;
+  letter-spacing: 1px;
+}
+
+.slide-show-user-section .produced {
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.user-control-links {
+  margin-top: 50px;
 }
 
 .edit-user .user-avatar {
@@ -195,40 +230,48 @@ a {
   background-size: cover;
   background-position: center;
   background-color: lightblue;
-  border-radius: 30px;
-  float: left;
+  border-radius: 30px;  
   margin-right: 20px;
 }
 
 .slide-show-user-profile p {
-  letter-spacing: 2px;
-  font-weight: bold;
+  
 }
 
-.slide-show-user-profile .user-name {
-  float: left;
-  line-height: 60px;
-  margin: 0px;
+.slide-show-user-section .user-name {
+  margin-top: 15px;
+  word-wrap: break-word;  
   letter-spacing: 2px;
+  color: #504946
 }
 
-.slide-show-details .slide-title {
-  font-size: 30px;
+.slide-show-details {
+  margin-right: 300px;
+  padding: 10px;
+  padding-top: 0px;
+}
+
+.slide-show-user-profile .slide-title {
+  font-size: 20px;
   font-weight: bold;
   border-left: 5px solid black;
   padding-left: 10px;
+  word-wrap: break-word;
+  letter-spacing: 2px;
 }
 
-.slide-show-details .slide-summary {
+.slide-show-user-profile .slide-summary {
   margin-bottom: 25px;
+  letter-spacing: 2px;
+  font-size: 13px;
+  color: #504946;
 }
 
 // Footer
 .footer-bar {
-  padding-top: 50px;
-  margin-top: 100px;
-  height: 200px;
-  background-color: darkgray;
+  padding-top: 50px; 
+  height: 50px;
+  background-color: #504946;
 }
 
 .footer-bar-content {
@@ -298,14 +341,6 @@ input[type="button"] {
     }
 }
 
-.go-to-preview {
-  background-color: orange;
-  padding: 10px;
-  border-radius: 5px;
-  color: white;
-  font-size: 14px;
-}
-
 .delete-slide-box {
   margin-top: 50px;
   background-color: red;
@@ -316,4 +351,97 @@ input[type="button"] {
 
 .delete-slide-box a {
   color: white;
+}
+
+
+
+// profile page
+.user-profile-box {
+  background-color: orange;
+  height: 100%;
+  width: 600px;
+  position: fixed;
+}
+
+.profile-background-image-box-content {
+  padding: 20px 100px;
+  height: 100%;
+  background-color: white;
+}
+
+.profile-background-image-box {
+  background-color: orange;
+  height: 78%;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.user-details-box {
+  position: absolute;
+  bottom: 110px;
+
+}
+
+.profile-user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-size: cover;
+  background-position: center;
+  background-color: pink;
+  float: left;
+}
+
+.prodile-user-name {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 60px;
+  float: left;
+  margin: 0px;
+  margin-left: 20px;
+}
+
+.user-slides-box {
+  margin-left: 600px;
+  padding-top: 20px;
+  padding-right: 50px;
+}
+
+.user-show-slides-box {
+  position: relative;
+  width: 48%;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  background-color: lightblue;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.user-slides-content {
+  margin-bottom: 50px;
+}
+
+.user-profile-settings {
+  margin-bottom: 40px;
+}
+
+.prodile-menu-title {
+  padding-right: 10px;
+  margin-top: 0px;
+  border-bottom: 1px solid black;
+  letter-spacing: 2px;
+  margin-right: 17px;
+}
+
+.setting-list-title {
+  border: 1px solid;
+  display: inline;
+  padding: 9px 20px;
+  font-size: 13px;
+  border-radius: 3px;
+  letter-spacing: 1px;
 }

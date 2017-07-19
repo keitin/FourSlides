@@ -1,27 +1,32 @@
-<div class="content-width">
-  <div class="slide-show-user-profile">
-    <p>profile</p>
-    <div class="clearfix">
-      <div class="user-avatar" style="background-image: url(<%= @user.avatar.url %>)">
-      </div>
-      <p class="user-name">
-        <%= @user.username %>
-      </p>
+<div class="">
+  <div class="user-profile-box">
+    <div class="profile-background-image-box-content">
+      <div class="profile-background-image-box", style="background-image: url(<%= @user.cover_image.url %>)">
+        <div class="user-details-box clearfix">
+          <div class="profile-user-avatar", style="background-image: url(<%= @user.avatar.url %>)">
+          </div>
+          <p class="prodile-user-name"><%= @user.username %></p>
+        </div>
+      </div>    
     </div>
   </div>
-  <div class="slide-index-content clearfix">
-  <h1>Your Slides</h1>
-  <% @slides.each do |slide| %>
-    <%= link_to slide_path(slide) do %>
-    <div style="background-image: url(<%= slide.images.first.image.url %>)" class="slide-top-image"></div>
-    <% end %>
-  <% end %>
-</div>
-  <% if @user == current_user %>
-    <div class="slide-show-user-profile">
-      <p>Settings</p>
-      <div><%= link_to 'EDIT PROFILE', edit_user_registration_path(@current_user)  %></div>
-      <div><%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, :class => '' %></div>
+  <div class="user-slides-box">
+    <div class="user-slides-content clearfix">
+      <% @slides.each do |slide| %>
+        <%= link_to slide_path(slide) do %>
+          <div class="user-show-slides-box", style="background-image: url(<%= slide.images.first.image.url %>)">
+          </div>
+        <% end %>
+      <% end %>
     </div>
-  <% end %>
+    <% if @user == current_user %>
+      <div class="user-profile-settings">
+        <p class="prodile-menu-title">Settings</p>
+        <div class="user-setting-list">
+          <p class="setting-list-title"><%= link_to 'Edit profile', edit_user_registration_path(@user) %></p>
+          <p class="setting-list-title"><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
