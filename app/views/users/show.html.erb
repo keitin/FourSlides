@@ -1,4 +1,13 @@
 <div class="">
+  <div class="smart-profile-background-image-box", style="background-image: url(<%= @user.cover_image.url %>)">
+    <div class="clearfix">
+      <div class="profile-user-avatar", style="background-image: url(<%= @user.avatar.url %>)">
+      </div>
+      <p class="prodile-user-name"><%= @user.username %></p>
+    </div>
+  </div>
+</div>    
+<div class="">
   <div class="user-profile-box">
     <div class="profile-background-image-box-content">
       <div class="profile-background-image-box", style="background-image: url(<%= @user.cover_image.url %>)">

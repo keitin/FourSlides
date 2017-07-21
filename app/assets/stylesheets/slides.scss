@@ -17,7 +17,7 @@ a {
 }
 
 .content-width {
-  width: 1000px;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -32,7 +32,7 @@ a {
 }
 
 .navigation-bar-content {
-  width: 1000px;
+  width: 90%;
   margin: 0px auto;
 }
 
@@ -136,10 +136,6 @@ a {
   display: block;
 }
 
-.slide-form-content {
-  margin-bottom: 250px;
-}
-
 .image-field {
   display: none;
 }
@@ -184,6 +180,11 @@ a {
   color: black;
   border: 1px solid;
   cursor: pointer;
+}
+
+.slide-submit-box {
+  border: 1px solid !important;
+  margin-bottom: 50px;
 }
 
 .slide-show-user-profile-content {
@@ -299,8 +300,7 @@ input[type="button"] {
   border-radius: 0;
   -webkit-box-sizing: content-box;
   -webkit-appearance: button;
-  appearance: button;
-  border: none;
+  appearance: button;  
   box-sizing: border-box;
     &::-webkit-search-decoration {
       display: none;
@@ -359,7 +359,7 @@ input[type="button"] {
   border-radius: 30px;
   background-size: cover;
   background-position: center;
-  background-color: pink;
+  background-color: lightgray;
   float: left;
 }
 
@@ -385,7 +385,7 @@ input[type="button"] {
   height: 200px;
   background-position: center;
   background-size: cover;
-  background-color: lightblue;
+  background-color: lightgray;
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -474,3 +474,180 @@ input[type="button"] {
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
+
+
+// for smart phone
+
+.smart-slide-show-user-profile .slide-description {
+  padding-bottom: 28px;
+  border-bottom: 1px solid lightgray;
+}
+
+.smart-slide-show-user-profile .links {
+  font-size: 12px;
+  border: 1px solid #504946;
+  padding: 8px 10px;
+  border-radius: 5px;
+  display: inline;
+  letter-spacing: 1px;
+}
+
+.smart-slide-show-user-profile .produced {
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.user-control-links {
+  margin-top: 50px;
+}
+
+.edit-user .user-avatar {
+  height: 60px;
+  width: 60px;
+  background-color: lightblue;
+  border-radius: 30px;
+  margin-right: 20px;
+}
+
+.smart-slide-show-user-profile .user-avatar {
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background-position: center;
+  background-color: lightblue;
+  border-radius: 30px; 
+  margin-right: 20px;
+}
+
+.slide-show-user-section .user-name {
+  margin-top: 15px;
+  word-wrap: break-word;  
+  letter-spacing: 2px;
+  color: #504946
+}
+
+.slide-show-details {
+  margin-right: 300px;
+  padding: 10px;
+  padding-top: 0px;
+}
+
+.smart-slide-show-user-profile .slide-title {
+  font-size: 20px;
+  font-weight: bold;
+  border-left: 5px solid black;
+  padding-left: 10px;
+  word-wrap: break-word;
+  letter-spacing: 2px;
+}
+
+.smart-slide-show-user-profile .slide-summary {
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+  font-size: 13px;
+  color: #504946;
+}
+
+.smart-slide-show-user-profile {
+  display: none;
+}
+
+.smart-header-content {
+  display: none;
+  padding: 20px;
+}
+
+.smart-header-text-content h1 {
+  letter-spacing: 10px;
+}
+
+.smart-profile-background-image-box {
+  display: none;
+  background-color: lightgray;
+  height: 78%;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+
+@media all and (max-width: 1200px) {
+  .user-show-slides-box {
+    width: 100%;    
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .slide-top-image {
+    width: 95%;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .slide-top-image {
+    width: 48%;
+  }
+
+  .header-content {
+    display: none;
+  }
+
+  .smart-header-content {
+    display: block;
+  }
+
+
+  .slide-index-content {
+    margin-left: 0px;
+  }
+
+  .user-profile-box {
+    display: none;
+  }
+
+  .user-show-slides-box {
+    width: 47%;
+  }
+
+  .user-slides-box {
+    margin-left: 20px;
+  }
+
+}
+
+@media all and (max-width: 500px) {
+  .slide-top-image {
+    width: 95%;
+  }
+
+  .slide-show-user-profile {
+    display: none;
+  }
+
+  .slide-show-details {
+    margin-right: 0px;
+  }
+
+  .smart-slide-show-user-profile {
+    display: block;
+  }
+
+  .user-show-slides-box {
+    width: 100%;
+    padding-right: 20px;
+  }
+
+  .smart-profile-background-image-box {
+    display: block;
+  }
+
+  .sign-in-large-content {
+    width: 90%;
+  }
+
+  .slide-field .image-field-label {
+    height: 200px;
+    line-height: 200px;
+  }
+}
+

@@ -1,6 +1,33 @@
 
 <div class="clearfix">
-  
+  <div class="smart-slide-show-user-profile">
+    <div class="slide-show-user-profile-content">
+      <div class="slide-description">
+        <p class="slide-title"><%= @slide.title %></p>
+        <p class="slide-summary"><%= @slide.summary %></p>
+        <p class="links"><%= link_to 'to Web Site', "/#{@slide.user.username}/#{@slide.title}", target: "_blanck" %></p>
+      </div>
+
+      <div class="slide-show-user-section">
+        <p class="produced">produced by</p>
+        <div class="">
+          <div class="user-avatar" style="background-image: url(<%= @slide.user.avatar.url %>)">
+          </div>
+          <p class="user-name">
+            <%= link_to "#{@slide.user.username}", user_path(@slide.user.username) %>
+          </p>
+        </div>
+        <% if @slide.user == current_user %>
+          <div class="user-control-links">
+            <p class="produced">settings</p>
+            <p class="links"><%= link_to 'Edit Slide', edit_slide_path(@slide)%></p>
+            <p class="links"><%= link_to 'Delete slide', slide_path(@slide), method: :delete %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <div class="slide-show-details">
     <% @slide.images.each do |image| %>
       <%= image_tag "#{image.image.url}", class: "slide-images" %>
