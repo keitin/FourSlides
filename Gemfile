@@ -54,3 +54,4 @@ gem 'jquery-turbolinks'
 group :production do
   gem 'rails_12factor'
 end
+gem 'fog'
