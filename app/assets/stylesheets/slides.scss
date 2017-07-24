@@ -68,7 +68,7 @@ a {
 
 // index page
 .header-content {
-  background-image: url("header_image.jpg");
+  background-image: url("https://s3-ap-northeast-1.amazonaws.com/fourslides-production/assets/header_image.jpg");
   background-position: right;
   background-size: cover;
   height: 300px;
@@ -418,7 +418,7 @@ input[type="button"] {
 
 // Sign-in page
 .sigin-in-large-box {
-  background-image: url(header_image);
+  background-image: url("https://s3-ap-northeast-1.amazonaws.com/fourslides-production/assets/header_image.jpg");
   background-position: center;
   background-size: cover;
   position: absolute;
