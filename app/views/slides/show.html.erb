@@ -54,7 +54,7 @@
           <div class="user-control-links">
             <p class="produced">settings</p>
             <p class="links"><%= link_to 'Edit Slide', edit_slide_path(@slide)%></p>
-            <p class="links"><%= link_to 'Delete slide', slide_path(@slide), method: :delete %>
+            <p class="links"><%= link_to 'Delete slide', slide_path(@slide), method: :delete, data: { confirm: 'Are you sure?' } %>
             </p>
           </div>
         <% end %>
