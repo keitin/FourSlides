@@ -228,6 +228,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    nprogress-rails (0.2.0.2)
     orm_adapter (0.5.0)
     pkg-config (1.1.7)
     pry (0.10.4)
@@ -330,6 +331,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   mysql2 (= 0.3.18)
+  nprogress-rails
   pry-rails
   rails (= 4.2.6)
   rails_12factor

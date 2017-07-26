@@ -55,3 +55,4 @@ group :production do
   gem 'rails_12factor'
 end
 gem 'fog'
+gem 'nprogress-rails'

@@ -12,7 +12,7 @@
   <% end %>
 
 
-  <%= form_for @slide, remote: true, :authenticity_token => true do |f| %>
+  <%= form_for @slide do |f| %>
     <div class="slide-field slide-title-field"> 
       <%= f.text_field :title, placeholder: "Title", autofocus: true %>
     </div>
